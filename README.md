@@ -58,7 +58,7 @@ Running this program will collect a bunch of metrics from your computer in real-
 
     > python collect_samples.py
 
-It will run for about 100 seconds, unless you change the defaults. You may kill it anytime with problems.
+It will run for about 100 seconds, unless you change the defaults. You may kill it anytime without problems.
 
 ## Query InfluxDB
 
