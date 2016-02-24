@@ -25,6 +25,8 @@
 
     2016/02/23 09:48:12 InfluxDB starting, version 0.10.1, branch 0.10.0, commit b8bb32ecad9808ef00219e7d2469514890a0987a, built unknown
 
+Leave this process running in your shell. Or you can start it in the background with `&`.
+
 ## Connect via CLI
 
     > influx
@@ -62,12 +64,12 @@ It will run for about 100 seconds, unless you change the defaults. You may kill 
 
 Connect to the CLI by typing `influx`, then query the database to see the samples you just collected.
 
-*Select the `demo` database:*
+**Select the `demo` database:**
 
     > use demo
     Using database demo
 
-*Show all collected measurements:*
+**Show all collected measurements:**
 
     > show measurements
     name: measurements
@@ -78,7 +80,7 @@ Connect to the CLI by typing `influx`, then query the database to see the sample
     memory
     network
 
-*Show complete series information:*
+**Show complete series information:**
 
     > show series
     name: cpu
@@ -104,7 +106,7 @@ Connect to the CLI by typing `influx`, then query the database to see the sample
     _key					timezone	user
     network,timezone=PST,user=mtaylor	PST		mtaylor
 
-*Select data from a measurement:*
+**Select data from a measurement:**
 
     > select * from cpu
     name: cpu
@@ -121,7 +123,7 @@ Connect to the CLI by typing `influx`, then query the database to see the sample
     1456342843	12.3	PST		mtaylor
     1456342844	11	PST		mtaylor
 
-*A more complex query:*
+**A more complex query:**
 
     > select percent from cpu where percent<10
     name: cpu
@@ -130,7 +132,7 @@ Connect to the CLI by typing `influx`, then query the database to see the sample
     1456342837	8.6
     1456342842	8.4
 
-*Aggregation function:*
+**Aggregation function:**
 
     > select mean(percent) from cpu
     name: cpu
