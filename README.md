@@ -111,17 +111,17 @@ Connect to the CLI by typing `influx`, then query the database to see the sample
     > select * from cpu
     name: cpu
     ---------
-    time		percent	timezone	user
-    1456342834	11	PST		mtaylor
-    1456342835	10.8	PST		mtaylor
-    1456342837	8.6	PST		mtaylor
-    1456342838	12.3	PST		mtaylor
-    1456342839	11.3	PST		mtaylor
-    1456342840	10.7	PST		mtaylor
-    1456342841	10.8	PST		mtaylor
-    1456342842	8.4	PST		mtaylor
-    1456342843	12.3	PST		mtaylor
-    1456342844	11	PST		mtaylor
+    time			percent	timezone	user
+    1456354666000000000	13.3	PST		mtaylor
+    1456354667000000000	19	PST		mtaylor
+    1456354668000000000	9.9	PST		mtaylor
+    1456354669000000000	9.8	PST		mtaylor
+    1456354670000000000	7.1	PST		mtaylor
+    1456354671000000000	10.8	PST		mtaylor
+    1456354672000000000	9.8	PST		mtaylor
+    1456354673000000000	17.1	PST		mtaylor
+    1456354675000000000	15.5	PST		mtaylor
+    1456354676000000000	12.8	PST		mtaylor
 
 **A more complex query:**
 
@@ -129,8 +129,10 @@ Connect to the CLI by typing `influx`, then query the database to see the sample
     name: cpu
     ---------
     time		percent
-    1456342837	8.6
-    1456342842	8.4
+    1456354668000000000	9.9
+    1456354669000000000	9.8
+    1456354670000000000	7.1
+    1456354672000000000	9.8
 
 **Aggregation function:**
 
