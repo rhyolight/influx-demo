@@ -6,11 +6,14 @@ from dateutil.tz import tzlocal
 
 from influxdb import InfluxDBClient
 
+# Influx connection details
 HOST = "localhost"
 PORT = 8086
 DB = "demo"
 USERNAME = None
 PASSWORD = None
+USE_SSL = False
+
 USER = os.environ["USER"]
 SAMPLE_COUNT = 100
 SAMPLE_INTERVAL_SECONDS = 1
@@ -22,7 +25,7 @@ def main():
     port=PORT,
     username=USERNAME,
     password=PASSWORD,
-    ssl=False
+    ssl=USE_SSL
   )
 
   setupDatabase(influxClient)
@@ -34,7 +37,7 @@ def main():
     if i % 10 == 0:
       print "\t({} samples remaining before I quit)".format(SAMPLE_COUNT - i)
     sample = getSample()
-    timestamp = int(time.mktime(sample["time"].timetuple()))
+    timestamp = int(time.mktime(sample["time"].timetuple())) * 1000000000
 
     payload = createInfluxPayload(sample, timestamp, timezone)
 
