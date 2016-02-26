@@ -113,7 +113,7 @@ def getTags():
   program.
   """
   return {
-    "user": os.environ["USER"],
+    "username": os.environ["USER"],
     # "host": platform.node(),
     "timezone": datetime.now(tzlocal()).tzname(),
   }
